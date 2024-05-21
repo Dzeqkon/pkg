@@ -1,6 +1,10 @@
 package http
 
-import "github.com/dzeqkon/pkg/errors"
+import (
+	"net/http"
+
+	"github.com/dzeqkon/pkg/errors"
+)
 
 type Response struct {
 	Code      int    `json:"code"`
@@ -8,14 +12,14 @@ type Response struct {
 	Reference string `json:"reference,omitempty"`
 }
 
-func WriteResponse(err error, data interface{}) Response {
+func WriteResponse(err error, data interface{}) (int, Response) {
 	if err != nil {
 		coder := errors.ParseCoder(err)
-		return Response{
+		return coder.HTTPStatus(), Response{
 			Code:      coder.Code(),
 			Message:   coder.String(),
 			Reference: coder.Reference(),
 		}
 	}
-	return data.(Response)
+	return http.StatusOK, data.(Response)
 }
