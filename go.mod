@@ -22,6 +22,7 @@ require (
 
 require (
 	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
+	github.com/h2non/filetype v1.1.3
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
