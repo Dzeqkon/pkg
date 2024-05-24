@@ -21,6 +21,7 @@ require (
 )
 
 require (
+	github.com/bitly/go-simplejson v0.5.1
 	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
 	github.com/h2non/filetype v1.1.3
 	github.com/jinzhu/inflection v1.0.0 // indirect
